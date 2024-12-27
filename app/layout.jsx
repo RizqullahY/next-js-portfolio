@@ -1,6 +1,9 @@
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
+// component import from root component
+import Header from "@/components/Header";
+
 const JetBrainsMono = JetBrains_Mono({
   variable: "--font-jetbrainsMono",
   subsets: ["latin"],
@@ -15,9 +18,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${JetBrainsMono.variable} antialiased`}
-      >
+      <body className={`${JetBrainsMono.variable} antialiased`} >
+        <Header />
         {children}
       </body>
     </html>
