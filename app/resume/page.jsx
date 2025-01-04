@@ -3,20 +3,36 @@
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import {
+  FaHtml5,
+  FaCss3,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaPython,
+  FaDatabase,
+  FaGitAlt,
+  FaJava,
+  FaPhp,
+  FaAws,
+  FaDocker,
+  FaLinux,
+  FaVuejs,
+  FaAngular,
+  FaSass,
+  FaBootstrap,
+  FaFigma,
+  FaSwift,
+  FaAndroid,
+  FaGolang,
+  FaCuttlefish,
+  FaCogs,
+} from "react-icons/fa";
+import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-
-import {
-  FaHtml5,
-  FaCss3,
-  FaJs,
-  FaReact,
-  FaFigma,
-  FaNodeJs,
-} from "react-icons/fa";
 import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
 
 // about data
@@ -111,33 +127,85 @@ const education = {
 
 // skill data
 const skills = {
-  title: "Skill",
+  title: "Skills",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae recusandae illo voluptatem unde",
+    "A list of technologies and tools that I have worked with over the years, demonstrating my proficiency in both frontend and backend development.",
   skillList: [
     {
       icon: <FaHtml5 />,
-      name: "Html",
+      name: "HTML5",
     },
     {
-      icon: <FaHtml5 />,
-      name: "HTML",
+      icon: <FaCss3 />,
+      name: "CSS3",
     },
     {
-      icon: <FaHtml5 />,
-      name: "HTML",
+      icon: <FaJs />,
+      name: "JavaScript",
     },
     {
-      icon: <FaHtml5 />,
-      name: "Html",
+      icon: <FaReact />,
+      name: "React",
     },
     {
-      icon: <FaHtml5 />,
-      name: "HTML",
+      icon: <FaVuejs />,
+      name: "Vue.js",
     },
     {
-      icon: <FaHtml5 />,
-      name: "HTML",
+      icon: <FaAngular />,
+      name: "Angular",
+    },
+    {
+      icon: <FaNodeJs />,
+      name: "Node.js",
+    },
+    {
+      icon: <FaPython />,
+      name: "Python",
+    },
+    {
+      icon: <FaJava />,
+      name: "Java",
+    },
+    {
+      icon: <FaPhp />,
+      name: "PHP",
+    },
+    {
+      icon: <FaDocker />,
+      name: "Docker",
+    },
+    {
+      icon: <FaLinux />,
+      name: "Linux",
+    },
+    {
+      icon: <FaDatabase />,
+      name: "Database Management",
+    },
+    {
+      icon: <FaGitAlt />,
+      name: "Git",
+    },
+    {
+      icon: <FaFigma />,
+      name: "Figma",
+    },
+    {
+      icon: <FaSass />,
+      name: "Sass",
+    },
+    {
+      icon: <FaBootstrap />,
+      name: "Bootstrap",
+    },
+    {
+      icon: <FaCogs />,
+      name: "DevOps",
+    },
+    {
+      icon: <FaCuttlefish />,
+      name: "C++",
     },
   ],
 };
@@ -247,10 +315,13 @@ const Resume = () => {
                           <Tooltip>
                             <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
                               <div className="text-6xl group-hover:text-accent transition-all duration-300">
-                                {skill.icon}</div>
+                                {skill.icon}
+                              </div>
                             </TooltipTrigger>
                             <TooltipContent>
-                              <p className="text-white/60 capitalize">{skill.name}</p>
+                              <p className="text-white/60 capitalize">
+                                {skill.name}
+                              </p>
                             </TooltipContent>
                           </Tooltip>
                         </TooltipProvider>
@@ -262,8 +333,26 @@ const Resume = () => {
             </TabsContent>
 
             {/* about */}
-            <TabsContent value="about" className="w-full text-center">
-              about
+            <TabsContent
+              value="about"
+              className="w-full text-center xl:text-left"
+            >
+              <div className="flex flex-col gap-[30px]">
+                <h3 className="text-4xl font-bold">{about.title}</h3>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                  {about.description}
+                </p>
+                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
+                  {about.info.map((item, index) => {
+                    return (
+                      <li key={index} className="flex items-center justify-center xl:justify-start gap-4">
+                        <span className="text-white/60">{item.fieldName}</span>
+                        <span className="text-xl">{item.fieldValue}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </TabsContent>
           </div>
         </Tabs>
