@@ -12,10 +12,10 @@ const Home = () => {
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           {/* text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <span className="text-xl">Copy Paste Specialist</span>
+            <span className="text-xl">Fullstack Developer</span>
             <h1 className="h1">
               Hello I'm <br />
-              <span className="text-accent">Is Me</span>
+              <span className="text-accent">Rafly</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80 ">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit iusto
